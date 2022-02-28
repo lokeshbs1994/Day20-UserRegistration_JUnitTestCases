@@ -17,7 +17,7 @@ public class UserRegistration {
     }
 
     public boolean emailAddress(String emailId){
-        Pattern pattern = Pattern.compile("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+        Pattern pattern = Pattern.compile("^[a-z]{3,}([_+-.]?[a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+([.,][a-z]{2,3}+)*$");
         Matcher matcher = pattern.matcher(emailId);
         return matcher.matches();
     }
@@ -53,7 +53,7 @@ public class UserRegistration {
     }
 
     public boolean emailIdValidator(String emailId) {
-        String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z]{2,3}){0,1}$";
+        String regex = "^[a-z]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+([.,]?[a-z]{2,3}){0,1}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(emailId);
         return matcher.matches();
